@@ -1,0 +1,43 @@
+{
+  "posts": [],
+  "Signup": [
+    {
+      "name": "shiv",
+      "email": "ss@in",
+      "mobile": "1235646489",
+      "password": "1",
+      "id": 1
+    },
+    {
+      "name": "shiv",
+      "email": "shiv@in",
+      "mobile": "1234561234",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "name": "Om",
+      "email": "dd@hn",
+      "mobile": "1234567890",
+      "password": "555555",
+      "id": 3
+    },
+    {
+      "name": "Shiv",
+      "email": "as@in",
+      "mobile": "1234567890",
+      "password": "777777",
+      "id": 4
+    },
+    {
+      "name": "shiv",
+      "email": "dd@in",
+      "mobile": "8095266400",
+      "password": "111111",
+      "id": 5
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
