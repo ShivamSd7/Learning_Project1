@@ -1,0 +1,8 @@
+.container{
+    background-color: rgb(244, 247, 250);
+    border: 2px solid rgb(228, 222, 222);
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+}

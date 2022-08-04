@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h4>Login Here</h4> <hr>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" formControlName="email" placeholder="Enter Correct Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <span class="error text-danger" *ngIf="email?.invalid && email?.touched">Invalid Email</span>  
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" formControlName="password" placeholder="Enter Password" class="form-control" id="exampleInputPassword1">
+                      <span class="error text-danger" *ngIf="password?.invalid && password?.touched">Invalid Password</span> 
+                    </div>
+                    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button> <br>
+                    <a style="color: blue; margin-top: 10px;"  routerLink="/signup">New User ? Click To Signup</a>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>

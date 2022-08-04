@@ -1,0 +1,84 @@
+<br> <br> <a routerLink="/home" style="text-align: left; text-decoration: none; margin-left: 300px; "> <strong> Back</strong> </a>
+<div class="container" style="margin-top: 7px; height:601px;">
+    <br><h1 style="text-align: center;">Buy Products</h1>
+
+    <div class="alert alert-light border d-flex align-items-center" *ngIf="addedProducts">
+      <strong class="text-success"> {{addedProducts}}</strong>&nbsp; is Selected and added in Cart !  
+      <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"  style="margin-left: 855px;">Check Out</button>  
+    </div>
+    
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Check Out</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <strong class="text-success"> {{addedProducts}}</strong>&nbsp;is Selected and Ready To Purchase.  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="orderSuccess()">Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--Modal Ends-->
+    
+    
+    <hr class="mb-3">
+    <br><div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="../../assets/Images/james-mckinven-tpuAo8gVs58-unsplash.jpg" class="card-img-top" alt="..." style="height: 175px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop</h5>
+                        <button class="btn btn-success" (click)="onSelectProduct('Laptop')">Select this Product</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="../../assets/Images/mnl.jpg" class="card-img-top" alt="..." style="height: 175px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Mobile</h5>
+                        <button  class="btn btn-success" (click)="onSelectProduct('Mobile')">Select this Product</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="../../assets/Images/tvmbl.jpg" class="card-img-top" alt="..." style="height: 175px;">
+                    <div class="card-body">
+                        <h5 class="card-title">TV</h5>
+                        <button  class="btn btn-success" (click)="onSelectProduct('TV')">Select this Product</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="../../assets/Images/wm.jpg" class="card-img-top" alt="..." style="height: 175px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Washing Machine</h5>
+                        <button  class="btn btn-success" (click)="onSelectProduct('WM')">Select this Product</button>
+                    </div>
+                </div>
+            </div>
+
+    
+            <app-child class="w-100" [productSelected]="proSelected"
+             [selectedProduct]="selProduct"
+             (addedProducts)="onAddedProduct($event)"
+            ></app-child>
+    
+    
+    </div>
+
+
+</div>

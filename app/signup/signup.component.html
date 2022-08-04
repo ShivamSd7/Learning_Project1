@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="text-center">
+            <h1>Signup Here</h1>
+            <h4>Get Membership</h4>
+            <hr />
+          </div>
+
+          <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input
+                formControlName="name"
+                placeholder="Enter Name"
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <span class="error text-danger" *ngIf="name?.invalid && name?.touched">Invalid Name </span> 
+            </div>
+  
+            <div class="mb-3">
+              <label class="form-label">Mobile Number</label>
+              <input
+                formControlName="mobile"
+                placeholder="Enter Mobile Number"
+                type="tel"
+                minlength="10"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            <span class="error text-danger" *ngIf="mobile?.invalid && mobile?.touched">Invalid Number </span>
+            </div>
+  
+            <div class="mb-3">
+              <label class="form-label">Email Id</label>
+              <input
+                formControlName="email"
+                placeholder="Enter Email"
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <span class="error text-danger" *ngIf="email?.invalid && email?.touched">Invalid Email </span> 
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input
+                formControlName="password"
+                placeholder="Enter Password"
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <button type="submit" [disabled]="signupForm.invalid" class="btn btn-primary">Signup</button> <br>
+            <a routerLink="/login">Already Member ? Click to Login !</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

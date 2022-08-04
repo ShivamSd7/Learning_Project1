@@ -1,0 +1,96 @@
+<br> <br> <a routerLink="/home" style="text-align: left; text-decoration: none; margin-left: 300px; "> <strong> Back</strong> </a>
+<div class="container" style="margin-top: 7px; height: 100%;">
+    <nav class="navbar navbar-light" style="margin-top: 25px; background-color: rgb(242, 237, 237);">
+        <div class="container-fluid">
+            <h2 style="color: black;">Product Management App</h2>
+            <div class="d-flex">
+                <button (click)="clickAddProduct()"  type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Products</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!--Jumbotron Starts-->
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold ">Add Products Section :</h1>
+            <p class="col-md-8 fs-4">You can save your Products using Angular 12</p>
+            <a class="btn btn-danger btn-lg" type="button" routerLink="/home" >Karma</a>
+        </div>
+    </div> 
+    <!--Jumbotron ends-->
+    
+    
+    <!--Table starts-->
+    <table class="table mt-4 ">
+        <thead>
+            <tr>
+                <th scope="col">Product ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Address</th>
+                <th scope="col">Product</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of allProductData">
+                <td>{{data.id}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.mobile}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.products}}</td>
+                <td>
+                    <button class="btn btn-info" (click)="onEdit(data)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button> &nbsp;
+                    <button class="btn btn-danger" (click)="deleteProduct(data)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--Table ends-->
+    
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Product Records</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                      <label  class="form-label">Name</label>
+                      <input type="text" class="form-control" formControlName="name" placeholder="Enter Name Here" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label  class="form-label">Email</label>
+                      <input type="email" placeholder="Enter Email ID" formControlName="email" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Mobile</label>
+                        <input type="text" class="form-control" formControlName="mobile" placeholder="Enter Mobile Number" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label  class="form-label">Address</label>
+                        <input type="text" class="form-control" formControlName="address" placeholder="Enter Address Here" id="exampleInputEmail1" aria-describedby="emailHelp">                
+                      </div>
+                      <div class="mb-3">
+                        <label  class="form-label">Product</label>
+                        <input type="text" class="form-control" formControlName="products" placeholder="Enter Product Here" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                   
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button  type="button" class="btn btn-warning" data-bs-dismiss="modal">Clear</button>
+              <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)="addProduct()">Add Details</button>
+              <button *ngIf="showBtn" type="button" class="btn btn-primary" (click)="update()">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
